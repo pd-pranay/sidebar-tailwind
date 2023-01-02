@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    <title>Menu Bar</title>
+</head>
+
+<body class="antialiased min-h-screen relative lg:flex" x-data="{open:false }">
+    <nav class="inset-0 duration-500 transform -translate-x-full lg:transform-none lg:opacity-100 absolute lg:relative w-80 z-10 bg-indigo-900 h-screen text-white p-3"
+        :class="{'-translate-x-0 ease-in opacity-100 ':open===true, '-translate-x-full ease-out opacity-0':open === false }">
+        <div class="flex justify-between">
+            <span class="font-bold p-2 text-2xl sm:text-3xl">Sidebar</span>
+            <button
+                class="lg:hidden block focus:outline-none focus:bg-indigo-700 hover:bg-indigo-700 rounded-md py-4 px-2"
+                @click="open=false">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+
+        <ul class="mt-8">
+            <li class="block  px-4 py-2 rounded-sm hover:bg-indigo-700">
+                <a href="" class="">Home </a>
+            </li>
+            <li class="block  px-4 py-2 rounded-sm hover:bg-indigo-700">
+                <a href="" class="">About </a>
+            </li>
+            <li class="block  px-4 py-2 rounded-sm hover:bg-indigo-700">
+                <a href="" class="">Contact </a>
+            </li>
+            <li class="block  px-4 py-2 rounded-sm hover:bg-indigo-700">
+                <a href="" class="">Blog </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="relative z-0 lg:flex-grow">
+        <header class="flex bg-gray-700 text-2xl sm:text-3xl p-4 font-bold text-white">
+            <button class="lg:hidden block focus:outline-none focus:bg-gray-700 hover:bg-gray-700 rounded-md mr-3"
+                @click="open=true">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <span>Dev</span>
+        </header>
+    </div>
+</body>
+
+</html>
